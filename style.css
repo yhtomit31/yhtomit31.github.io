@@ -167,6 +167,10 @@ button {
   color: #000;
   padding: 6px;
 }
+
+button:hover {
+  cursor: pointer;
+}
 /* End Global */
 
 /* Mobile Styles */
@@ -433,6 +437,10 @@ nav ul li a {
   color: #000;
   padding: 6px;
   text-decoration: underline;
+}
+
+.page form button:hover {
+  cursor: pointer;
 }
 
 .page img,
