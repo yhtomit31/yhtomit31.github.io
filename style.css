@@ -159,9 +159,6 @@ a {
   text-decoration: none;
   color: #000;
 }
-a:hover {
-  border-bottom: 1px solid;
-}
 
 button {
   background-color: #fff;
@@ -247,6 +244,10 @@ nav ul {
 
 nav ul li {
   margin-top: 8px;
+}
+
+nav ul li:hover {
+  border: 1px solid;
 }
 
 nav ul li a {
@@ -564,6 +565,10 @@ footer ul {
   justify-content: space-around;
   width: 100%;
   margin: 0.5em auto;
+}
+
+footer ul li:hover {
+  border-bottom: 1px solid;
 }
 
 footer ul li a {
