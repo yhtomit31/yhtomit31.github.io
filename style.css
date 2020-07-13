@@ -246,8 +246,8 @@ nav ul li {
   margin-top: 8px;
 }
 
-nav ul li:hover {
-  border: 1px solid;
+nav ul li:hover {  
+  box-shadow:0 0 1px 1px;
 }
 
 nav ul li a {
@@ -568,7 +568,7 @@ footer ul {
 }
 
 footer ul li:hover {
-  border-bottom: 1px solid;
+  box-shadow:0 0 1px 1px;
 }
 
 footer ul li a {
