@@ -321,7 +321,6 @@ nav ul li a {
 
 .page .menu-item {
   margin-bottom: 1em;
-  border: 3px solid;
   background-color: #fff;
   -webkit-box-shadow: 5px 5px 10px;
   box-shadow: 5px 5px 10px;
@@ -345,7 +344,6 @@ nav ul li a {
 
 .page .article-item {
   margin-bottom: 1em;
-  border: 3px solid;
   background-color: #fff;
   -webkit-box-shadow: 5px 5px 10px;
   box-shadow: 5px 5px 10px;
@@ -375,7 +373,6 @@ nav ul li a {
 
 .page .portfolio-item {
   margin-bottom: 1em;
-  border: 3px solid;
   background-color: #fff;
   -webkit-box-shadow: 5px 5px 10px;
   box-shadow: 5px 5px 10px;
@@ -391,7 +388,6 @@ nav ul li a {
   -ms-flex-direction: column;
   flex-direction: column;
   margin-bottom: 1em;
-  border: 3px solid;
   background-color: #fff;
   -webkit-box-shadow: 5px 5px 10px;
   box-shadow: 5px 5px 10px;
@@ -454,7 +450,6 @@ nav ul li a {
   justify-content: center;
   margin-top: 1em;
   background-color: #fff;
-  border: 3px solid;
   -webkit-box-shadow: 5px 5px 10px #000;
   box-shadow: 5px 5px 10px #000;
   color: #000;
