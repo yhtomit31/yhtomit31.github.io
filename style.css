@@ -251,6 +251,7 @@ nav ul {
 nav ul li {
   margin-top: 8px;
   width: 112px;
+  z-index: 1;
 }
 
 nav ul li:hover {
@@ -268,7 +269,7 @@ nav ul li a {
 
 /* Page - Home, Menu, Blog Styles */
 .page {
-  margin: 2em auto;
+  margin: .15em auto 1em;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -325,6 +326,7 @@ nav ul li a {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  background-color: #FFE6E4;
 }
 
 .page section.welcome img {
