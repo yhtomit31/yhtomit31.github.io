@@ -133,6 +133,25 @@ table {
 /* End CSS Reset  */
 
 /* Global */
+@font-face {
+  font-family: Frosting;
+  src: url(fonts/FrostingforBreakfast.eot);
+  src: url(fonts/Frosting-for-Breakfast_regular.otf) format("opentype"),
+       url(fonts/FrostingforBreakfast.svg#svgFontName) format("svg"),
+       url(fonts/FrostingforBreakfast.eot?#iefix) format("embedded-opentype"),
+       url(fonts/FrostingforBreakfast.ttf) format("truetype");
+}
+
+/* @font-face {
+  font-family: Frosting;
+  src: url(fonts/FrostingforBreakfast.eot);
+  src: url(fonts/Frosting-for-Breakfast_regular.otf) format("opentype"),
+       url(fonts/FrostingforBreakfast.svg#svgFontName) format("svg"),
+       url(fonts/FrostingforBreakfast.eot?#iefix) format("embedded-opentype"),
+       url(fonts/FrostingforBreakfast.ttf) format("truetype");
+  font-weight: bold;
+} */
+
 body {
   font-family: "Raleway", sans-serif;
   font-weight: 100;
@@ -285,9 +304,11 @@ nav ul li a {
 }
 
 .page h1 {
-  font-size: 3em;
+  font-size: 6em;
   margin-left: 0.25em;
   text-align: left;
+  font-family: "Frosting";
+  color: #fff;
 }
 
 .page h2 {
@@ -327,6 +348,14 @@ nav ul li a {
   flex-wrap: wrap;
   align-items: center;
   background-color: #FFE6E4;
+}
+
+.page.home section.welcome {
+  background-color: #FFE6E4;
+}
+
+.page.menu section.welcome {
+  background-color: #A6E8FF;
 }
 
 .page section.welcome img {
