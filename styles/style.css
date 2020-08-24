@@ -135,11 +135,7 @@ table {
 /* Global */
 @font-face {
   font-family: Frosting;
-  src: url(fonts/FrostingforBreakfast.eot);
-  src: url(fonts/Frosting-for-Breakfast_regular.otf) format("opentype"),
-       url(fonts/FrostingforBreakfast.svg#svgFontName) format("svg"),
-       url(fonts/FrostingforBreakfast.eot?#iefix) format("embedded-opentype"),
-       url(fonts/FrostingforBreakfast.ttf) format("truetype");
+  src: url(fonts/Frosting-for-Breakfast_regular.otf) format("opentype")
 }
 
 body {
