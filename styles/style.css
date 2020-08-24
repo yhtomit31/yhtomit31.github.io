@@ -135,7 +135,7 @@ table {
 /* Global */
 @font-face {
   font-family: Frosting;
-  src: url(./fonts/Frosting-for-Breakfast_regular.otf) format("opentype");
+  src: url(../fonts/Frosting-for-Breakfast_regular.otf) format("opentype");
 }
 
 body {
