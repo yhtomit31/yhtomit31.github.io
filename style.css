@@ -347,7 +347,6 @@ nav ul li a {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  background-color: #FFE6E4;
 }
 
 .page.home section.welcome {
@@ -356,6 +355,10 @@ nav ul li a {
 
 .page.menu section.welcome {
   background-color: #A6E8FF;
+}
+
+.page.blog section.welcome {
+  background-color: #CBC5E2;
 }
 
 .page section.welcome img {
