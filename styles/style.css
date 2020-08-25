@@ -593,9 +593,20 @@ nav ul li a {
   justify-content: center;
   margin: 0 0;
 }
+
+.page.portfolio:hover {
+  cursor: grab;
+}
+
+.page.portfolio:active {
+  cursor: grabbing;
+}
 .page.portfolio img {
-  width: 480px;
-  height: 400px;
+  max-height: 42em;
+}
+
+.page.portfolio .slick-slider {
+  width: 100%;
 }
 /* End Page - Portfolio Specific Styles */
 
