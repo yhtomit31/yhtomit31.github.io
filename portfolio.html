@@ -11,11 +11,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#fde2e2" />
 
-    <link 
-      rel="apple-touch-icon" 
-      sizes="180x180" 
-      href="apple-touch-icon.png" />
-    
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+
     <link
       rel="icon"
       type="image/png"
@@ -37,12 +34,10 @@
       rel="stylesheet"
     />
 
-    <script src="js/modernizr.custom.05819.js"></script>
+    <!-- Stylesheet for slick.js - Thanks Ken Wheeler -->
+    <link rel="stylesheet" href="styles/slick.css" />
 
-    <script
-      src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="js/modernizr.custom.05819.js"></script>
 
     <script
       src="https://kit.fontawesome.com/75d466a4cd.js"
@@ -81,23 +76,45 @@
             <a href="blog.html" title="Link to Blog page">blog</a>
           </li>
           <li class="is-active">
-            <a href="portfolio.html" title="Link to Portfolio page">portfolio</a>
+            <a href="portfolio.html" title="Link to Portfolio page"
+              >portfolio</a
+            >
           </li>
         </ul>
       </nav>
     </header>
 
-    <div class="page portfolio">
-      <img src="images/home--menu-sugar-cookies.jpg" alt="">
-      <img src="images/home--portfolio-emt-donations.png" alt="">
-      <img src="images/menu--cookies.png" alt="">
-      <img src="images/home--portfolio-kouchen.jpg" alt="">
-      <img src="images/menu--cupcakes.png" alt="">
-      <img src="images/menu--custom-cake.png" alt="">
-      <img src="images/menu--kouchens.jpg" alt="">
-      <img src="images/menu--macarons.jpg" alt="">
-      <img src="images/menu--macaroons.png" alt="">
-    </div>
+    <section class="page portfolio">
+      <div class="slick-slider">
+        <div>
+          <img src="images/portfolio/7P1B0126.png" alt="" />
+        </div>
+        <div>
+          <img src="images/portfolio/7P1B0130.png" alt="" />
+        </div>
+        <div>
+          <img src="images/portfolio/7P1B0131.png" alt="" />
+        </div>
+        <div>
+          <img src="images/portfolio/7P1B0408.png" alt="" />
+        </div>
+        <div>
+          <img src="images/portfolio/7P1B9263.png" alt="" />
+        </div>
+        <div>
+          <img src="images/portfolio/EMT Heart - 1.png" alt="" />
+        </div>
+        <div>
+          <img src="images/portfolio/EMT Heart - Star Of Life.png" alt="" />
+        </div>
+        <div>
+          <img src="images/portfolio/IMG_0211.png" alt="" />
+        </div>
+        <div>
+          <img src="images/portfolio/IMG_0213.png" alt="" />
+        </div>
+      </div>
+    </section>
 
     <footer role="contentinfo">
       <ul>
@@ -163,5 +180,17 @@
         <span>Site for educational purposes only</span>
       </div>
     </footer>
+
+    <!-- js Libraries -->
+    <!-- jQuery CDN -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.min.js"
+      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- slick.js for carousel - Thanks Ken Wheeler -->
+    <script src="js/libraries/slick/slick.min.js"></script>
+    <script src="js/slickCarousel.js"></script>
   </body>
 </html>
