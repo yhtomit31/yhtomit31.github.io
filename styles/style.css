@@ -602,11 +602,39 @@ nav ul li a {
   cursor: grabbing;
 }
 .page.portfolio img {
-  max-height: 42em;
+  max-height: 48em;
 }
 
 .page.portfolio .slick-slider {
   width: 100%;
+  position: relative;
+}
+
+.page.portfolio .slick-slider-controls i {
+  position: absolute;
+  top: 42%;
+  font-size: 2em;
+  color: #4D4D4D;
+}
+
+.page.portfolio .slick-slider-controls i.fa-chevron-circle-left {
+  left: 4%;
+}
+
+.page.portfolio .slick-slider-controls i.fa-chevron-circle-left:hover,
+.page.portfolio .slick-slider-controls i.fa-chevron-circle-right:hover {
+  color: #999999;
+  cursor: pointer;
+}
+
+.page.portfolio .slick-slider-controls i.fa-chevron-circle-right {
+  right: 4%;
+}
+
+@media all and (min-width: 768px) {
+  .page.portfolio .slick-slider-controls i {
+    font-size: 4em;    
+  }
 }
 /* End Page - Portfolio Specific Styles */
 
