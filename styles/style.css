@@ -189,9 +189,9 @@ header {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: space-evenly;
-  -ms-flex-pack: space-evenly;
-  justify-content: space-evenly;
+  -webkit-box-pack: space-between;
+  -ms-flex-pack: space-between;
+  justify-content: space-between;
 }
 
 header h1 {
@@ -847,11 +847,11 @@ footer ul {
   }
 
   .header-brand-container {
-    width: 50%;
+    /* width: 50%;   */
   }
 
   nav {
-    width: 50%;
+    width: auto;
     position: relative;
     left: auto;
     bottom: auto;
