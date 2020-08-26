@@ -181,7 +181,7 @@ button:hover {
 /* Header */
 header {
   position: relative;
-  height: 16em;
+  height: 12em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -189,13 +189,9 @@ header {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: space-evenly;
-  -ms-flex-pack: space-evenly;
-  justify-content: space-evenly;
-  background-image: url(../images/header-img--right.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  -webkit-box-pack: space-between;
+  -ms-flex-pack: space-between;
+  justify-content: space-between;
 }
 
 header h1 {
@@ -274,7 +270,7 @@ nav ul li a {
 
 /* Page - Home, Menu, Blog Styles */
 .page {
-  margin: .15em auto 1em;
+  margin: 0.15em auto 1em;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -290,7 +286,7 @@ nav ul li a {
 }
 
 .page h1 {
-  font-size: 6em;
+  font-size: 4em;
   margin-left: 0.25em;
   text-align: left;
   font-family: "Frosting";
@@ -333,23 +329,24 @@ nav ul li a {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  padding-top: 1em;
 }
 
 .page.home section.welcome {
-  background-color: #FFE6E4;
+  background-color: #ffe6e4;
 }
 
 .page.menu section.welcome {
-  background-color: #A6E8FF;
+  background-color: #a6e8ff;
 }
 
 .page.blog section.welcome {
-  background-color: #CBC5E2;
+  background-color: #cbc5e2;
 }
 
 .page section.welcome img {
   width: 100%;
-  max-width: 688px;
+  max-width: 704px;
 }
 
 .page .menu-wrapper {
@@ -615,7 +612,7 @@ nav ul li a {
   position: absolute;
   top: 42%;
   font-size: 2em;
-  color: #4D4D4D;
+  color: #4d4d4d;
 }
 
 .page.portfolio .slick-slider-controls i.fa-chevron-circle-left {
@@ -634,7 +631,7 @@ nav ul li a {
 
 @media all and (min-width: 768px) {
   .page.portfolio .slick-slider-controls i {
-    font-size: 4em;    
+    font-size: 4em;
   }
 }
 /* End Page - Portfolio Specific Styles */
@@ -771,6 +768,7 @@ footer .valid-css {
 
   .page h1 {
     max-width: 574px;
+    font-size: 6em;
   }
 
   .page section.welcome {
@@ -837,6 +835,26 @@ footer ul {
   .page form {
     max-width: none;
     padding: 2em;
+  }
+}
+
+@media all and (min-width: 768px) {
+  header {
+    -ms-flex-direction: row;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .header-brand-container {
+    /* width: 50%;   */
+  }
+
+  nav {
+    width: auto;
+    position: relative;
+    left: auto;
+    bottom: auto;
   }
 }
 /* End Tablet Styles */
