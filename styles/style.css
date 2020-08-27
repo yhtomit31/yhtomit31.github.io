@@ -598,6 +598,13 @@ nav ul li a {
 .page.portfolio:active {
   cursor: grabbing;
 }
+
+.page.portfolio h1 {
+  color: darkgray;
+  margin-bottom: .25em;
+  max-width: none;
+}
+
 .page.portfolio img {
   width: 100%;
   max-height: 80em;
