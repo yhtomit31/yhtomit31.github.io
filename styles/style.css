@@ -599,7 +599,7 @@ nav ul li a {
   cursor: grabbing;
 }
 .page.portfolio img {
-  width: auto;
+  width: 100%;
   max-height: 80em;
 }
 
@@ -838,16 +838,12 @@ footer ul {
   }
 }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 852px) {
   header {
     -ms-flex-direction: row;
     flex-direction: row;
     align-items: center;
     flex-wrap: wrap;
-  }
-
-  .header-brand-container {
-    /* width: 50%;   */
   }
 
   nav {
