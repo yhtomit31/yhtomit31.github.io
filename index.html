@@ -65,7 +65,7 @@
         updatedCartBadgeValue = currentNumberOfItemsInCart + inputValue;
 
         // set element innerText to summation variable
-        badgeElement[0].innerText = updatedCartBadgeValue;
+        badgeElement[0].innerHTML = updatedCartBadgeValue;
 
         localStorage.setItem("cartItems", updatedCartBadgeValue);
 
@@ -83,7 +83,7 @@
 
         // check if value exists and assign to innerText of badge element
         if (localStorageValue) {
-          badgeElement[0].innerText = localStorageValue;
+          badgeElement[0].innerHTML = localStorageValue;
         }
       });
     </script>
