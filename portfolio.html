@@ -43,6 +43,22 @@
       src="https://kit.fontawesome.com/75d466a4cd.js"
       crossorigin="anonymous"
     ></script>
+
+    <script>
+      // add event listener to window object and run after everything is loaded and parsed
+      window.addEventListener("load", () => {
+        // declare variables and assign
+        var badgeElement = document.getElementsByClassName(
+          "shopping-cart-badge-value"
+        );
+        var localStorageValue = localStorage.getItem("cartItems");
+
+        // check if value exists and assign to innerText of badge element
+        if (localStorageValue) {
+          badgeElement[0].innerText = localStorageValue;
+        }
+      });
+    </script>
   </head>
   <body>
     <!--[if IE]>
@@ -80,6 +96,12 @@
               >portfolio</a
             >
           </li>
+          <li>
+            <a href="#" onclick="alert('Shopping Cart coming soon')">
+              <i class="fas fa-shopping-cart"></i>
+              <span class="shopping-cart-badge-value">0</span>
+            </a>
+          </li>
         </ul>
       </nav>
     </header>
@@ -91,9 +113,9 @@
         <div>
           <img
             srcset="
-              images/portfolio/7P1B0126.png 768w,
+              images/portfolio/7P1B0126.png       768w,
               images/portfolio/7P1B0126@0.5x.png  425w,
-              images/portfolio/7P1B0126@0.75x.png
+              images/portfolio/7P1B0126@0.75x.png 200w
             "
             sizes="(max-width: 704px) 425px, 768px"
             src="images/portfolio/7P1B0126.png"
@@ -103,8 +125,7 @@
         <div>
           <img
             srcset="
-              images/portfolio/7P1B0130.webp,
-              images/portfolio/7P1B0130@0.5x.png  768w,
+              images/portfolio/7P1B0130.webp      768w,
               images/portfolio/7P1B0130@0.75x.png 425w
             "
             sizes="(max-width: 704px) 425px, 768px"
