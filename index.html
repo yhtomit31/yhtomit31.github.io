@@ -41,21 +41,36 @@
       crossorigin="anonymous"
     ></script>
 
-    <script type="text/javascript">
-      function addToCart(inputValue, item) {        
-        var inputValue = parseInt(inputValue[0].value);
+    <script>
+      // function declaration for adding to cart
+      //// note - this function currently only updates the badge next to the shopping cart icon
+      function addToCart(input, item) {
+        // declare variable for value retrieved from input and assign
+        var inputValue = parseInt(input[0].value);
+
+        // if value is empty or not a number alert user
         if (!inputValue) {
           alert("Please enter a number before adding to cart");
           return;
         }
 
+        // declare variables and assign
         var badgeElement = document.getElementsByClassName("shopping-cart-badge-value");
         var currentNumberOfItemsInCart = parseInt(document.getElementsByClassName("shopping-cart-badge-value")[0].innerText);
+
+        // declare variable for arithmetic operation
         var updatedCartBadgeValue;
 
+        // assign summation of binary operation
         updatedCartBadgeValue = currentNumberOfItemsInCart + inputValue;
+
+        // set element innerText to summation variable
         badgeElement[0].innerText = updatedCartBadgeValue;
-        confirm(`${inputValue} ${item} have been added to the cart`)
+
+        localStorage.setItem("cartItems", updatedCartBadgeValue);
+
+        // notify user of number of items added and type of item added to cart with JS confirm()
+        alert(`${inputValue} ${item} have been added to the cart`);
       }
 
       // add event listener to window object and run after everything is loaded and parsed
@@ -152,21 +167,22 @@
               your mouth sandwiched with an assortment of flavors. One blissful
               bite makes you close your eyes and feel like the snow has melted
               away and the sun is out to play.
-
-              <span class="page-add-to-shopping-cart">
-                <input
-                  type="number"
-                  name="menuItemMacaronToShoppingCart"
-                  id="indexAddMacaronToShoppingCart"
-                  step="1"
-                />
-                <button
-                  onclick="addToCart(document.getElementsByName('menuItemMacaronToShoppingCart'), 'macaron(s)')"
-                >
-                  add to cart
-                </button>
-              </span>
             </p>
+            
+            <span class="page-add-to-shopping-cart">
+              <input
+                type="number"
+                name="menuItemMacaronToShoppingCart"
+                id="indexAddMacaronToShoppingCart"
+                step="1"
+              />
+              <!-- onClick function call to execute addToCart function passing input and type of item -->
+              <button
+                onclick="addToCart(document.getElementsByName('menuItemMacaronToShoppingCart'), 'macaron(s)')"
+              >
+                add to cart
+              </button>
+            </span>
           </div>
 
           <div class="menu-item">
@@ -187,6 +203,21 @@
               cakes or create any flavor your little heart desires along with
               the assortment of flavors listed in my flavor profile.
             </p>
+            
+            <span class="page-add-to-shopping-cart">
+              <input
+                type="number"
+                name="menuItemCakesToShoppingCart"
+                id="menuItemCakesToShoppingCart"
+                step="1"
+              />
+              <!-- onClick function call to execute addToCart function passing input and type of item -->
+              <button
+                onclick="addToCart(document.getElementsByName('menuItemCakesToShoppingCart'), 'cake(s)')"
+              >
+                add to cart
+              </button>
+            </span>
           </div>
 
           <div class="menu-item-container">
@@ -206,6 +237,21 @@
                 or send me a picture for decorating inspiration. Cupcake cakes
                 are always welcome. $20 per dozen
               </p>
+
+              <span class="page-add-to-shopping-cart">
+                <input
+                  type="number"
+                  name="menuItemCupcakesToShoppingCart"
+                  id="menuItemCupcakesToShoppingCart"
+                  step="1"
+                />
+                <!-- onClick function call to execute addToCart function passing input and type of item -->
+                <button
+                  onclick="addToCart(document.getElementsByName('menuItemCupcakesToShoppingCart'), 'cupcake(s)')"
+                >
+                  add to cart
+                </button>
+              </span>
             </div>
 
             <div class="menu-item">
@@ -225,6 +271,21 @@
                 fluffy buttercream or delicate royal icing – whichever suits
                 your design better.
               </p>
+              
+              <span class="page-add-to-shopping-cart">
+                <input
+                  type="number"
+                  name="menuItemCookieToShoppingCart"
+                  id="indexAddCookiesToShoppingCart"
+                  step="1"
+                />
+                <!-- onClick function call to execute addToCart function passing input and type of item -->
+                <button
+                  onclick="addToCart(document.getElementsByName('menuItemCookieToShoppingCart'), 'cookie(s)')"
+                >
+                  add to cart
+                </button>
+              </span>
             </div>
           </div>
         </div>
