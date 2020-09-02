@@ -57,6 +57,18 @@
         badgeElement[0].innerText = updatedCartBadgeValue;
         confirm(`${inputValue} ${item} have been added to the cart`)
       }
+
+      // add event listener to window object and run after everything is loaded and parsed
+      window.addEventListener("load", () => {
+        // declare variables and assign
+        var badgeElement = document.getElementsByClassName("shopping-cart-badge-value");
+        var localStorageValue = localStorage.getItem("cartItems");
+
+        // check if value exists and assign to innerText of badge element
+        if (localStorageValue) {
+          badgeElement[0].innerText = localStorageValue;
+        }
+      });
     </script>
   </head>
 
