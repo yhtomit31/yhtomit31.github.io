@@ -824,6 +824,22 @@ footer .valid-css {
     margin: 0 1em 1em;
   }
 
+  .page .menu-item .page-add-to-shopping-cart {
+    margin: .25em;
+    font-size: .75em;
+  }
+
+  .page .menu-item .page-add-to-shopping-cart input::-webkit-outer-spin-button,
+  .page .menu-item .page-add-to-shopping-cartinput::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0; 
+  }
+  
+  input[type=number] {
+      -moz-appearance:textfield; /* Firefox */
+  }
+
+
   .page .blog-item-container {
     display: flex;
     flex-wrap: wrap;

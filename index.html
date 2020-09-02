@@ -40,6 +40,24 @@
       src="https://kit.fontawesome.com/75d466a4cd.js"
       crossorigin="anonymous"
     ></script>
+
+    <script type="text/javascript">
+      function addToCart(inputValue, item) {        
+        var inputValue = parseInt(inputValue[0].value);
+        if (!inputValue) {
+          alert("Please enter a number before adding to cart");
+          return;
+        }
+
+        var badgeElement = document.getElementsByClassName("shopping-cart-badge-value");
+        var currentNumberOfItemsInCart = parseInt(document.getElementsByClassName("shopping-cart-badge-value")[0].innerText);
+        var updatedCartBadgeValue;
+
+        updatedCartBadgeValue = currentNumberOfItemsInCart + inputValue;
+        badgeElement[0].innerText = updatedCartBadgeValue;
+        confirm(`${inputValue} ${item} have been added to the cart`)
+      }
+    </script>
   </head>
 
   <body>
@@ -74,7 +92,15 @@
             <a href="blog.html" title="Link to Blog page">blog</a>
           </li>
           <li>
-            <a href="portfolio.html" title="Link to Portfolio page">portfolio</a>
+            <a href="portfolio.html" title="Link to Portfolio page"
+              >portfolio</a
+            >
+          </li>
+          <li>
+            <a href="#" onclick="alert('Shopping Cart coming soon')">
+              <i class="fas fa-shopping-cart"></i>
+              <span class="shopping-cart-badge-value">0</span>
+            </a>
           </li>
         </ul>
       </nav>
@@ -114,6 +140,20 @@
               your mouth sandwiched with an assortment of flavors. One blissful
               bite makes you close your eyes and feel like the snow has melted
               away and the sun is out to play.
+
+              <span class="page-add-to-shopping-cart">
+                <input
+                  type="number"
+                  name="menuItemMacaronToShoppingCart"
+                  id="indexAddMacaronToShoppingCart"
+                  step="1"
+                />
+                <button
+                  onclick="addToCart(document.getElementsByName('menuItemMacaronToShoppingCart'), 'macaron(s)')"
+                >
+                  add to cart
+                </button>
+              </span>
             </p>
           </div>
 
