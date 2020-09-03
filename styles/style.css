@@ -370,11 +370,17 @@ nav ul li a {
   box-shadow: 5px 5px 10px;
   max-width: 320px;
   position: relative;
+  border-radius: 4px;
 }
 
 .page .menu-item p {
   padding: 1em;
   min-height: 384px;
+}
+
+.page .menu img, .page .menu video {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
 }
 
 .page .menu-item button {
@@ -433,11 +439,14 @@ nav ul li a {
   -webkit-box-shadow: 5px 5px 10px;
   box-shadow: 5px 5px 10px;
   max-width: 320px;
+  border-radius: 4px;
 }
 
 .page .article-item video,
 .page .article-item img {
   max-height: 368px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
 }
 
 .page .article-item p {
@@ -462,6 +471,11 @@ nav ul li a {
   -webkit-box-shadow: 5px 5px 10px;
   box-shadow: 5px 5px 10px;
   max-width: 320px;
+  border-radius: 4px;
+}
+
+.page .portfolio-item img {
+  border-radius: 4px;
 }
 
 .page form {
@@ -546,6 +560,7 @@ nav ul li a {
   padding: 6px 0;
   text-decoration: underline;
   line-height: 2em;
+  border-radius: 4px;
 }
 
 .is-active {
@@ -569,10 +584,16 @@ nav ul li a {
   break-inside: avoid;
   page-break-inside: avoid;
   -webkit-column-break-inside: avoid;
+  border-radius: 4px;
 }
 
 .page.menu .menu-item:first-child {
   margin-top: 0;
+}
+
+.page.menu .menu-item img {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
 }
 
 .page.menu form {
@@ -625,6 +646,9 @@ nav ul li a {
   .page.blog .article-item video,
   .page.page.blog .article-item img {
     max-height: none;
+    border-radius: 0;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
   }
 }
 /* End Page - Blog Specific Styles */
