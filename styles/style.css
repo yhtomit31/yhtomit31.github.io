@@ -504,10 +504,6 @@ nav ul li a {
   width: 30%;
 }
 
-.page form .form-item.honey-pot {
-  display: none;
-}
-
 .page form textarea,
 .form-item input {
   width: 70%;
