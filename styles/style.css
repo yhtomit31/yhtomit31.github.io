@@ -503,6 +503,11 @@ nav ul li a {
 .form-item label {
   width: 30%;
 }
+
+.page form .form-item.honey-pot {
+  display: none;
+}
+
 .page form textarea,
 .form-item input {
   width: 70%;
