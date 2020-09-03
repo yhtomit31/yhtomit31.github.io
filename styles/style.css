@@ -175,6 +175,10 @@ button {
 button:hover {
   cursor: pointer;
 }
+
+input {
+  text-align: center;
+}
 /* End Global */
 
 /* Mobile Styles */
@@ -373,20 +377,43 @@ nav ul li a {
   min-height: 384px;
 }
 
+.page .menu-item button {
+  border: 1px solid #000;
+  border-radius: 8px;
+  color: #000;
+}
+
 .page .menu-item .page-add-to-shopping-cart {
   position: absolute;
-  bottom: .5em;
+  bottom: 0.5em;
   right: 1em;
 }
 
 .page .menu-item .page-add-to-shopping-cart input::-webkit-outer-spin-button,
 .page .menu-item .page-add-to-shopping-cartinput::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0; 
+  -webkit-appearance: none;
+  margin: 0;
+  text-align: center;
 }
 
-input[type=number] {
-    -moz-appearance:textfield; /* Firefox */
+.page .menu-item .page-add-to-shopping-cart input[type="number"] {
+  -moz-appearance: textfield; /* Firefox */
+  border: none;
+  border-bottom: 1px solid #000;
+}
+
+.page .menu-item .page-add-to-shopping-cart input:focus,
+.page .menu-item .page-add-to-shopping-cart input:active {
+  border-bottom: 2px solid #ffe6e4;
+}
+
+.page .menu-item .page-add-to-shopping-cart input[type="number"]::placeholder {
+  font-size: 0.75em;
+  letter-spacing: 2px;
+}
+
+.page .menu-item .page-add-to-shopping-cart input:focus::placeholder {
+  color: transparent;
 }
 
 .page .menu-item em {
@@ -620,9 +647,9 @@ input[type=number] {
 
 .page.portfolio h1 {
   color: darkgray;
-  margin-top: .25em;
+  margin-top: 0.25em;
   max-width: none;
-  margin-bottom: .25em;
+  margin-bottom: 0.25em;
   margin-left: 0;
   width: 100%;
   text-align: center;
@@ -664,7 +691,8 @@ input[type=number] {
 .page.portfolio .slick-slider-controls .carousel-control.pause {
   background-size: 24px;
   background-image: url("../images/pause-solid.svg");
-  filter: invert(77%) sepia(2%) saturate(27%) hue-rotate(344deg) brightness(89%) contrast(86%);
+  filter: invert(77%) sepia(2%) saturate(27%) hue-rotate(344deg) brightness(89%)
+    contrast(86%);
 }
 
 .page.portfolio .slick-slider-controls i {
@@ -843,20 +871,9 @@ footer .valid-css {
   }
 
   .page .menu-item .page-add-to-shopping-cart {
-    margin: .25em;
-    font-size: .75em;
+    margin: 0.25em;
+    font-size: 0.75em;
   }
-
-  .page .menu-item .page-add-to-shopping-cart input::-webkit-outer-spin-button,
-  .page .menu-item .page-add-to-shopping-cartinput::-webkit-inner-spin-button {
-      -webkit-appearance: none;
-      margin: 0; 
-  }
-  
-  input[type=number] {
-      -moz-appearance:textfield; /* Firefox */
-  }
-
 
   .page .blog-item-container {
     display: flex;
