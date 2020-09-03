@@ -580,6 +580,12 @@ nav ul li a {
 /* End Page - Home, Menu, Blog Styles  */
 
 /* Page - Menu Specific Styles - Based off of https://codepen.io/cimmanon/pen/CcGlE - Thanks Cimmanon*/
+.page section.menu--order-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .page.menu .menu-wrapper {
   columns: 1;
   column-gap: 0;
