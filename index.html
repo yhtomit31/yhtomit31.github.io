@@ -35,6 +35,7 @@
     />
 
     <script src="js/libraries/modernizr.custom.05819.js"></script>
+    <script src="js/utilities.js"></script>
 
     <script
       src="https://kit.fontawesome.com/75d466a4cd.js"
@@ -69,8 +70,8 @@
 
         localStorage.setItem("cartItems", updatedCartBadgeValue);
 
-        // notify user of number of items added and type of item added to cart with JS confirm()
-        alert(`${inputValue} ${item} have been added to the cart`);
+        // call external function to notify user of number of items added to cart 
+        notifyUserAddedToCart(inputValue);
       }
     </script>
 
