@@ -955,3 +955,24 @@ footer ul {
   }
 }
 /* End Desktop Styles */
+
+/* Start Animations */
+.added-to-cart  {
+  animation: animateShoppingCart 5s ease forwards;
+  font-size: 2em;
+}
+
+@keyframes animateShoppingCart {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    color: #000;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+/* End Animations */
