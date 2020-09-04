@@ -183,6 +183,7 @@ button:focus {
 input {
   text-align: center;
   outline: none;
+  line-height: normal;
 }
 /* End Global */
 
@@ -405,6 +406,7 @@ nav ul li a {
   position: absolute;
   bottom: 0.5em;
   right: 1em;
+  display: flex;
 }
 
 .page .menu-item .page-add-to-shopping-cart input::-webkit-outer-spin-button,
