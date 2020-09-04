@@ -176,8 +176,13 @@ button:hover {
   cursor: pointer;
 }
 
+button:focus {
+  box-shadow: 0 0 2px #a6e8ff;
+}
+
 input {
   text-align: center;
+  outline: none;
 }
 /* End Global */
 
@@ -387,6 +392,13 @@ nav ul li a {
   border: 1px solid #000;
   border-radius: 8px;
   color: #000;
+}
+
+.page .menu-item button:focus,
+.page .menu-item button:active,
+.page .menu-item button:hover {
+  border: 1px solid transparent;
+  box-shadow: 0 0 1px 2px #ffe6e4;
 }
 
 .page .menu-item .page-add-to-shopping-cart {
