@@ -49,10 +49,13 @@
         // declare variable for value retrieved from input and assign
         var inputValue = parseInt(input[0].value);
 
-        // if value is empty or not a number alert user
+        // if value is empty, not a number alert user, or not a positive integer
         if (!inputValue) {
           alert("Please enter a number before adding to cart");
           return;
+        }
+        else if (inputValue < 0) {
+          alert("Please enter a positive number")
         }
 
         // declare variables and assign
