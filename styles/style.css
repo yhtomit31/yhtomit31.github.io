@@ -893,7 +893,9 @@ footer .free-pik a {
   color: blue;
 }
 /* End Footer */
-
+.browserupgrade a {
+  color: blue;
+}
 /* End Mobile Styles */
 
 /* Tablet Styles */
