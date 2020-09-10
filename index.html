@@ -35,6 +35,8 @@
     />
 
     <script src="js/libraries/modernizr.custom.05819.js"></script>
+
+    <!--------- Module 3 Case Project JS Script --------->
     <script src="js/utilities.js"></script>
 
     <script
@@ -42,6 +44,7 @@
       crossorigin="anonymous"
     ></script>
 
+    <!-- addToCart -->
     <script>
       // function declaration for adding to cart
       //// note - this function currently only updates the badge next to the shopping cart icon
@@ -53,14 +56,19 @@
         if (!inputValue) {
           alert("Please enter a number before adding to cart");
           return;
-        }
-        else if (inputValue < 0) {
-          alert("Please enter a positive number")
+        } else if (inputValue < 0) {
+          alert("Please enter a positive number");
+          return;
         }
 
         // declare variables and assign
-        var badgeElement = document.getElementsByClassName("shopping-cart-badge-value");
-        var currentNumberOfItemsInCart = parseInt(document.getElementsByClassName("shopping-cart-badge-value")[0].innerHTML);
+        var badgeElement = document.getElementsByClassName(
+          "shopping-cart-badge-value"
+        );
+        var currentNumberOfItemsInCart = parseInt(
+          document.getElementsByClassName("shopping-cart-badge-value")[0]
+            .innerHTML
+        );
 
         // declare variable for arithmetic operation
         var updatedCartBadgeValue;
@@ -73,16 +81,19 @@
 
         localStorage.setItem("cartItems", updatedCartBadgeValue);
 
-        // call external function to notify user of number of items added to cart 
-        notifyUserAddedToCart(inputValue);
+        // call external function to notify user of number of items added to cart
+        notifyUserAddedToCart(inputValue, item);
       }
     </script>
 
+    <!-- Check if localStorage contains cart items value and apply to innerHTML -->
     <script>
       // add event listener to window object and run after everything is loaded and parsed
       window.addEventListener("load", () => {
         // declare variables and assign
-        var badgeElement = document.getElementsByClassName("shopping-cart-badge-value");
+        var badgeElement = document.getElementsByClassName(
+          "shopping-cart-badge-value"
+        );
         var localStorageValue = localStorage.getItem("cartItems");
 
         // check if value exists and assign to innerText of badge element
@@ -174,7 +185,7 @@
               bite makes you close your eyes and feel like the snow has melted
               away and the sun is out to play.
             </p>
-            
+
             <span class="page-add-to-shopping-cart">
               <input
                 type="number"
@@ -210,7 +221,7 @@
               cakes or create any flavor your little heart desires along with
               the assortment of flavors listed in my flavor profile.
             </p>
-            
+
             <span class="page-add-to-shopping-cart">
               <input
                 type="number"
@@ -280,7 +291,7 @@
                 fluffy buttercream or delicate royal icing – whichever suits
                 your design better.
               </p>
-              
+
               <span class="page-add-to-shopping-cart">
                 <input
                   type="number"
@@ -586,6 +597,14 @@
           />
         </a>
       </p>
+
+      <section class="free-pik">
+        Icons made by
+        <a href="http://www.freepik.com/" title="Freepik">Freepik</a> from
+        <a href="https://www.flaticon.com/" title="Flaticon">
+          www.flaticon.com</a
+        >
+      </section>
 
       <div class="footer-educational-message">
         <span>Site for educational purposes only</span>
