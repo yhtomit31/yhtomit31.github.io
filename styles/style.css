@@ -1014,9 +1014,23 @@ footer ul {
 /* End Desktop Styles */
 
 /* Start Animations */
+.add-to-cart-container {
+  width: 80px;
+  position: fixed;
+  top: 4em;
+  right: 4em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .added-to-cart  {
   animation: animateShoppingCart 5s ease forwards;
-  font-size: 2em;
+}
+
+.added-to-cart img {
+  width: 48px;
+  height: 48px;
 }
 
 @keyframes animateShoppingCart {
