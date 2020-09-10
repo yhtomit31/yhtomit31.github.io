@@ -340,6 +340,9 @@ nav ul li a {
   flex-wrap: wrap;
   align-items: center;
   padding-top: 1em;
+  width: 90%;
+  border-radius: 4px;
+  margin-top: .5em;
 }
 
 .page.home section.welcome {
@@ -904,7 +907,7 @@ footer .valid-css {
 
   .page h1 {
     max-width: 574px;
-    font-size: 6em;
+    /* font-size: 6em; */
   }
 
   .page section.welcome {
@@ -969,7 +972,7 @@ footer ul {
 @media all and (min-width: 768px) {
   .page section.welcome {
     flex-direction: row;
-    width: 100%;
+    /* width: 100%; */
     justify-content: center;
   }
 
