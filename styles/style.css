@@ -884,6 +884,14 @@ footer .valid-css {
   width: 88px;
   height: 31px;
 }
+
+footer .free-pik {
+  font-size: .8em;
+}
+
+footer .free-pik a {
+  color: blue;
+}
 /* End Footer */
 
 /* End Mobile Styles */
