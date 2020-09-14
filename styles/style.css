@@ -636,7 +636,9 @@ nav ul li a {
   border-radius: 4px;
 }
 
-.page .link-to-internal-pages:hover {
+.page .link-to-internal-pages:hover,
+.page .link-to-internal-pages:active,
+.page .link-to-internal-pages:focus {
   box-shadow: 5px 5px 10px #000;
 }
 
