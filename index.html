@@ -35,8 +35,6 @@
     />
 
     <script src="js/libraries/modernizr.custom.05819.js"></script>
-
-    <!-- Module 3 Case Project JS Script -->
     <script src="js/utilities.js"></script>
 
     <script
@@ -44,7 +42,6 @@
       crossorigin="anonymous"
     ></script>
 
-    <!-- addToCart -->
     <script>
       // function declaration for adding to cart
       //// note - this function currently only updates the badge next to the shopping cart icon
@@ -58,7 +55,6 @@
           return;
         } else if (inputValue < 0) {
           alert("Please enter a positive number");
-          return;
         }
 
         // declare variables and assign
@@ -82,11 +78,10 @@
         localStorage.setItem("cartItems", updatedCartBadgeValue);
 
         // call external function to notify user of number of items added to cart
-        notifyUserAddedToCart(inputValue, item);
+        notifyUserAddedToCart(inputValue);
       }
     </script>
 
-    <!-- Check if localStorage contains cart items value and apply to innerHTML -->
     <script>
       // add event listener to window object and run after everything is loaded and parsed
       window.addEventListener("load", () => {
@@ -161,6 +156,24 @@
         />
       </section>
 
+      <section class="about-us" role="region" aria-label="About Us">
+        <div class="about-us-item">
+          <div class="about-us-message">
+            <h3>About Bake MD</h3>
+            <p>
+              I've been next to the mixer for most of my life. From the days of
+              waking up early, and helping mom bake all day. To as recent
+              as keeping myself up all night to gaurantee everything comes out
+              tasting and looking as good as possible. I'm ready for
+              anything. It can be done. From scratch, with love.
+            </p>
+          </div>
+          <div class="about-us-img">
+            <img src="images/menu--custom-cake.png" alt="" />
+          </div>
+        </div>
+      </section>
+
       <section class="menu" role="region" aria-label="Menu">
         <a href="menu.html" title="Link to Menu page">
           <h3>MENU</h3>
@@ -175,17 +188,17 @@
                 role="img"
               />
 
-              <h4>macarons</h4>
+              <h4>cookies</h4>
             </a>
 
-            <p>
+            <!-- <p>
               The Delicate French pastry made with almond flour and my family
               meriengue recipe. This pastry is like two cookies that melt in
               your mouth sandwiched with an assortment of flavors. One blissful
               bite makes you close your eyes and feel like the snow has melted
               away and the sun is out to play.
             </p>
-
+            
             <span class="page-add-to-shopping-cart">
               <input
                 type="number"
@@ -194,13 +207,13 @@
                 step="1"
                 placeholder="enter quantity"
               />
-              <!-- onClick function call to execute addToCart function passing input and type of item -->
+              <!-- onClick function call to execute addToCart function passing input and type of item 
               <button
                 onclick="addToCart(document.getElementsByName('menuItemMacaronToShoppingCart'), 'macaron(s)')"
               >
                 add to cart
               </button>
-            </span>
+            </span> -->
           </div>
 
           <div class="menu-item">
@@ -211,17 +224,17 @@
                 role="img"
               />
 
-              <h4>custom cakes</h4>
+              <h4>cakes</h4>
             </a>
 
-            <p>
+            <!-- <p>
               My cakes are double layer cakes made from scratch with old family
               recipes. Decorated with my fluffy buttercream to obtain the look
               from you inspiration pictures. Being from scratch I can fill your
               cakes or create any flavor your little heart desires along with
               the assortment of flavors listed in my flavor profile.
             </p>
-
+            
             <span class="page-add-to-shopping-cart">
               <input
                 type="number"
@@ -230,13 +243,13 @@
                 step="1"
                 placeholder="enter quantity"
               />
-              <!-- onClick function call to execute addToCart function passing input and type of item -->
+              <!-- onClick function call to execute addToCart function passing input and type of item 
               <button
                 onclick="addToCart(document.getElementsByName('menuItemCakesToShoppingCart'), 'cake(s)')"
               >
                 add to cart
               </button>
-            </span>
+            </span> -->
           </div>
 
           <div class="menu-item-container">
@@ -251,7 +264,7 @@
 
               <h4>cupcakes</h4>
 
-              <p>
+              <!-- <p>
                 Each cupcake is made unique with love. Refer to my flavor list
                 or send me a picture for decorating inspiration. Cupcake cakes
                 are always welcome. $20 per dozen
@@ -265,13 +278,13 @@
                   step="1"
                   placeholder="enter quantity"
                 />
-                <!-- onClick function call to execute addToCart function passing input and type of item -->
+                <!-- onClick function call to execute addToCart function passing input and type of item
                 <button
                   onclick="addToCart(document.getElementsByName('menuItemCupcakesToShoppingCart'), 'cupcake(s)')"
                 >
                   add to cart
                 </button>
-              </span>
+              </span> -->
             </div>
 
             <div class="menu-item">
@@ -282,16 +295,16 @@
                   role="img"
                 />
 
-                <h4>sugar cookies</h4>
+                <h4>...more from scratch</h4>
               </a>
 
-              <p>
+              <!-- <p>
                 These cookies are sweet with a little citrus zing. Decorated
                 with the inspiration pictures received from you with either
                 fluffy buttercream or delicate royal icing – whichever suits
                 your design better.
               </p>
-
+              
               <span class="page-add-to-shopping-cart">
                 <input
                   type="number"
@@ -300,13 +313,13 @@
                   step="1"
                   placeholder="enter quantity"
                 />
-                <!-- onClick function call to execute addToCart function passing input and type of item -->
+                <!-- onClick function call to execute addToCart function passing input and type of item 
                 <button
                   onclick="addToCart(document.getElementsByName('menuItemCookieToShoppingCart'), 'cookie(s)')"
                 >
                   add to cart
                 </button>
-              </span>
+              </span> -->
             </div>
           </div>
         </div>
@@ -335,7 +348,9 @@
             </div>
 
             <div class="blog-message">
-              <h4>The Beginning of a Fresh Baked Blog</h4>
+              <a href="./blog.html#beginning">
+                <h4>The Beginning of a Fresh Baked Blog</h4>
+              </a>
 
               <p>
                 Dreams. We all have them. My mom would always tell me we would
@@ -363,7 +378,9 @@
             </div>
 
             <div class="blog-message">
-              <h4>satisfying</h4>
+              <a href="./blog.html#inspiring">
+                <h4>satisfying</h4>
+              </a>
 
               <p>
                 There is just something so satisfying about chocolate drippage.
@@ -387,7 +404,9 @@
               </div>
 
               <div class="blog-message">
-                <h4>Starting Every Cake with a Solid Recipe</h4>
+                <a href="./blog.html#inspiring"
+                  ><h4>Starting Every Cake with a Solid Recipe</h4></a
+                >
 
                 <p>
                   This week I was asked to make a teacher appreciation cake for
@@ -416,7 +435,9 @@
               </div>
 
               <div class="blog-message">
-                <h4>Lets Talk About Ermine Frosting</h4>
+                <a href="./blog.html"
+                  ><h4>Lets Talk About Ermine Frosting</h4>
+                </a>
 
                 <p>
                   Lets talk about Ermine frosting. This cake was a bit of a
@@ -450,33 +471,41 @@
 
         <div class="portfolio-wrapper">
           <div class="portfolio-item">
-            <img
-              src="images/home--portfolio-smash-cake.jpg"
-              alt="Smash Cakes Available | Image"
-              role="img"
-            />
+            <a href="./portfolio.html">
+              <img
+                src="images/home--portfolio-smash-cake.jpg"
+                alt="Smash Cakes Available | Image"
+                role="img"
+              />
+            </a>
           </div>
           <div class="portfolio-item">
-            <img
-              src="images/home--portfolio-sheep-cake-and-macaroons.png"
-              alt="Custom Cakes and Macaroons | Image"
-              role="img"
-            />
+            <a href="./portfolio.html">
+              <img
+                src="images/home--portfolio-sheep-cake-and-macaroons.png"
+                alt="Custom Cakes and Macaroons | Image"
+                role="img"
+              />
+            </a>
           </div>
           <div class="portfolio-item-container">
             <div class="portfolio-item">
-              <img
-                src="images/home--portfolio-emt-donations.png"
-                alt="EMT Sugar Cookies | Image"
-                role="img"
-              />
+              <a href="./portfolio.html">
+                <img
+                  src="images/home--portfolio-emt-donations.png"
+                  alt="EMT Sugar Cookies | Image"
+                  role="img"
+                />
+              </a>
             </div>
             <div class="portfolio-item">
-              <img
-                src="images/home--portfolio-kouchen-test.png"
-                alt="Even Kouchens. Off menu available"
-                role="img"
-              />
+              <a href="./portfolio.html">
+                <img
+                  src="images/home--portfolio-kouchen-test.png"
+                  alt="Even Kouchens. Off menu available"
+                  role="img"
+                />
+              </a>
             </div>
           </div>
         </div>
@@ -597,14 +626,6 @@
           />
         </a>
       </p>
-
-      <div class="free-pik">
-        Icons made by
-        <a href="http://www.freepik.com/" title="Freepik">Freepik</a> from
-        <a href="https://www.flaticon.com/" title="Flaticon">
-          www.flaticon.com</a
-        >
-      </div>
 
       <div class="footer-educational-message">
         <span>Site for educational purposes only</span>
