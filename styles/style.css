@@ -138,6 +138,10 @@ table {
   src: url(../fonts/Frosting-for-Breakfast_regular.otf) format("opentype");
 }
 
+* {
+  transition: all 2s ease;
+}
+
 body {
   font-family: "Raleway", sans-serif;
   font-weight: 100;
@@ -265,7 +269,7 @@ nav ul li {
 }
 
 nav ul li:hover {
-  box-shadow: 0px 1px 0px 0px;
+  opacity: 0.5;
 }
 
 nav ul li a {
@@ -309,6 +313,7 @@ nav ul li a {
 .page h3 {
   font-size: 1.8em;
   margin: 1em auto 0.5em;
+  text-decoration: underline;
 }
 
 .page h4 {
@@ -353,9 +358,12 @@ nav ul li a {
   margin-bottom: 1em;
 }
 
-.page section.about-us .about-us-img {
+.page section.about-us .about-us-img,
+.page section.about-us .about-us-img img {
   max-width: 384px;
   width: 100%;
+  box-shadow: 5px 5px 10px;
+  border-radius: 4px;
 }
 
 .page section.welcome {
@@ -363,8 +371,6 @@ nav ul li a {
   flex-wrap: wrap;
   align-items: center;
   padding-top: 1em;
-  width: 90%;
-  border-radius: 4px;
   margin-top: 0.5em;
 }
 
@@ -426,13 +432,12 @@ nav ul li a {
 
 .page .menu img,
 .page .menu video {
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
+  border-radius: 4px;
 }
 
 .page .menu img:hover,
 .page .menu video:hover {
-  filter: blur(1px);
+  cursor: pointer;
 }
 
 .page .menu-item button {
@@ -491,15 +496,17 @@ nav ul li a {
 
 .page article {
   margin: 2em;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  justify-content: center;
 }
 
 .page .article-item {
-  margin-bottom: 1em;
-  background-color: #fff;
-  -webkit-box-shadow: 5px 5px 10px;
-  box-shadow: 5px 5px 10px;
-  max-width: 320px;
-  border-radius: 4px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 90%;
 }
 
 .page .article-item video,
@@ -511,11 +518,23 @@ nav ul li a {
 
 .page .article-item video:hover,
 .page .article-item img:hover {
-  filter: blur(1px);
+  cursor: pointer;
 }
 
 .page .article-item p {
   padding: 1em 1em 0;
+}
+
+.page .blog .article-item .blog-media {
+  max-width: 384px;
+  width: 100%;
+  box-shadow: 5px 5px 10px;
+  border-radius: 4px;
+}
+
+.page .blog .article-item .blog-message {
+  width: 100%;
+  max-width: 544px;
 }
 
 .page .blog .blog-wrapper {
@@ -544,7 +563,7 @@ nav ul li a {
 }
 
 .page .portfolio-item img:hover {
-  filter: blur(1px);
+  cursor: pointer;
 }
 
 .page .connect {
@@ -643,8 +662,7 @@ nav ul li a {
 }
 
 .is-active {
-  box-shadow: 0px 1px 0px 0px;
-  /* padding-bottom: 4px; */
+  opacity: 0.5;
 }
 
 .ellipsis-styles {
@@ -1069,7 +1087,7 @@ footer ul {
     width: 32%;
   }
 
-  .page section.about-us .about-us-item .about-us-message{
+  .page section.about-us .about-us-item .about-us-message {
     margin-bottom: 0;
   }
 }
