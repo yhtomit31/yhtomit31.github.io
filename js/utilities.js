@@ -67,6 +67,11 @@ function notifyUserAddedToCart(value, item) {
   }
 }
 
+// GIT417 - Module 4/Chapter 4: Debugging and Error Handling
+// connect-form is passed to an external function, validateForm(,,,),
+// The honeypot is checked for value and execution halted if value !== ""
+// try..catch.finally error handling is used to check if the input elements have value and meet basic browser validation
+// debugger is placed before try...catch to automically halt execution at breakpoint if developers console is opened
 function validateForm(element, event, formHoneyPot, submittedFormMessage) {
   // declare variables
   var form = document.getElementsByClassName(element)[0];
@@ -120,14 +125,13 @@ function validateForm(element, event, formHoneyPot, submittedFormMessage) {
     userMessage.style.color = "lightcoral";
     userMessage.style.opacity = "1";
     userMessage.innerHTML = error;
-  }
-  finally {
+  } finally {
     // console.log general error message with related form class name after try...catch execution
     if (hasErrors) {
-      console.log(`Please correct all ${form.classList[0]} errors`)
+      console.log(`Please correct all ${form.classList[0]} errors`);
     }
   }
-  
+
   // if hasErrors is false send to FormSpree
   if (!hasErrors) {
     // ajax call to submit form to FormSpree
