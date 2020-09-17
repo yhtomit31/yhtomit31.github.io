@@ -508,8 +508,7 @@ nav ul li a {
 .page .article-item video,
 .page .article-item img {
   max-height: 368px;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
+  border-radius: 4px;
 }
 
 .page .article-item video:hover,
@@ -523,13 +522,13 @@ nav ul li a {
 
 .page .blog .article-item .blog-media {
   max-width: 384px;
-  width: 100%;
+  width: 50%;
   box-shadow: 5px 5px 10px;
   border-radius: 4px;
 }
 
 .page .blog .article-item .blog-message {
-  width: 100%;
+  width: 50%;
   max-width: 544px;
 }
 
@@ -751,6 +750,29 @@ nav ul li a {
 /* End Page - Menu Specific Styles */
 
 /* Page - Blog Specific Styles */
+.page.blog h4 {
+  width: 96%;
+  border-bottom: 1px solid rgba(00, 00, 00, .5);
+}
+.page.blog article {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: ghostwhite;
+  padding: 1em 0;
+  border-radius: 4px;
+}
+
+
+.page.blog .article-item .blog-media,
+.page.blog .article-item .blog-message {
+  width: 50%;
+}
+
+.page.blog .article-item .blog-media {
+  padding-top: .75em;
+}
+
 @media all and (min-width: 768px) {
   .page.blog .blog-wrapper {
     display: flex;
