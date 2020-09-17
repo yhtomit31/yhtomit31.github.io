@@ -138,10 +138,6 @@ table {
   src: url(../fonts/Frosting-for-Breakfast_regular.otf) format("opentype");
 }
 
-* {
-  transition: all 2s ease;
-}
-
 body {
   font-family: "Raleway", sans-serif;
   font-weight: 100;
@@ -461,7 +457,7 @@ nav ul li a {
 }
 
 .page .menu-item .page-add-to-shopping-cart input::-webkit-outer-spin-button,
-.page .menu-item .page-add-to-shopping-cartinput::-webkit-inner-spin-button {
+.page .menu-item .page-add-to-shopping-cart input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
   text-align: center;
@@ -588,6 +584,7 @@ nav ul li a {
 }
 
 .page .form-item-container {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -616,6 +613,22 @@ nav ul li a {
   width: 70%;
 }
 
+.page form input {
+  border: 1px solid #999999;
+  border-radius: 2px;
+  transition: 1s all ease;
+}
+
+.page form label + #connectBusiness,
+.page form #connectBusiness {
+  opacity: 0;
+  height: 1px;
+}
+
+.page form input.invalid-form-input {
+  border: 1px solid lightcoral;
+}
+
 .page form button {
   margin: 0.5em auto 1em;
   width: 8em;
@@ -625,11 +638,24 @@ nav ul li a {
   border-radius: 8px;
   color: #000;
   padding: 6px;
-  text-decoration: underline;
 }
 
 .page form button:hover {
   cursor: pointer;
+  opacity: .5;
+}
+
+.page form .connect-form-user-message {
+  opacity: 0;
+  color: lightgreen;
+  width: 100%;
+  text-align: center;
+  transition: .25s all ease;
+  height: 16px;
+  position: absolute;
+  bottom: 1em;
+  left: 0;
+  right: 0;
 }
 
 .page img,

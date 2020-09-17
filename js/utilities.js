@@ -66,3 +66,101 @@ function notifyUserAddedToCart(value, item) {
     }
   }
 }
+
+function validateForm(element, event, formHoneyPot, submittedFormMessage) {
+  // declare variables
+  var form = document.getElementsByClassName(element)[0];
+  var inputs = form.elements;
+  var formData = new FormData(form);
+  var hasErrors;
+  var userMessage = document.getElementsByClassName(submittedFormMessage)[0];
+
+  // prevent default form submission behavior. Prevents page refresh
+  event.preventDefault(); // Comment after GIT417 completion to allow FormSpree submission page
+
+  // honeypot - used to prevent bot submissions - if value is present reset form and return execution
+  var honeyPot = document.getElementById(formHoneyPot);
+  if (honeyPot.value) {
+    form.reset();
+    return;
+  }
+
+  // add breakpoint before try..catch for exception handling
+  debugger;
+  // try catch exception handling for form validation. Displays appropriate message for condition
+  try {
+    // loop through form inputs to check for value and style as conditioned
+    for (var x = 0; x <= inputs.length - 1; x++) {
+      // if input doesn't have value, is not a submit button, and is not the honeypot
+      if (
+        !inputs[x].value &&
+        inputs[x].type !== "submit" &&
+        inputs[x].id !== formHoneyPot
+      ) {
+        inputs[x].classList.add("invalid-form-input");
+        hasErrors = true;
+      }
+      // if input does have value, is not a submit button, and is not the honeypot
+      else if (
+        inputs[x].value &&
+        inputs[x].type !== "submit" &&
+        inputs[x].id !== formHoneyPot
+      ) {
+        inputs[x].classList.remove("invalid-form-input");
+      }
+    }
+
+    // throw moved outside of loop to allow iteration through each input
+    if (hasErrors) {
+      throw `check info :-(`;
+    }
+
+    // catch errors and set userMessage innerHTMl to error
+  } catch (error) {
+    userMessage.style.color = "lightcoral";
+    userMessage.style.opacity = "1";
+    userMessage.innerHTML = error;
+  }
+  finally {
+    // console.log general error message with related form class name after try...catch execution
+    if (hasErrors) {
+      console.log(`Please correct all ${form.classList[0]} errors`)
+    }
+  }
+  
+  // if hasErrors is false send to FormSpree
+  if (!hasErrors) {
+    // ajax call to submit form to FormSpree
+    ajax(form.method, form.action, formData);
+
+    // style userMessage for successful submission
+    userMessage.innerHTML = "submitted :-D";
+    userMessage.style.color = "lightgreen";
+    userMessage.style.opacity = "1";
+  }
+  return;
+}
+
+function ajax(method, url, data) {
+  // Commented to prevent reaching Formspree montly limit
+  // var xhr = new XMLHttpRequest();
+  // xhr.open(method, url);
+  // xhr.setRequestHeader("Accept", "application/json");
+  // xhr.onreadystatechange = function () {
+  //   if (xhr.readyState !== XMLHttpRequest.DONE) return;
+  //   if (xhr.status === 200) {
+  var form = document.getElementsByClassName("connect-form")[0];
+  form.reset();
+  for (var x = 0; x <= form.elements.length - 1; x++) {
+    var submittedMessage = document.getElementsByClassName(
+      "connect-form-user-message"
+    )[0];
+    form.elements[x].classList.remove("invalid-form-input");
+    form.elements[x].placeholder = "";
+    // xhr.responseType;
+    submittedMessage.style.opacity = "1";
+  }
+  // }
+  // };
+  // xhr.send(data);
+}

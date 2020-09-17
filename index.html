@@ -207,7 +207,7 @@
                 step="1"
                 placeholder="enter quantity"
               />
-              <!-- onClick function call to execute addToCart function passing input and type of item 
+               onClick function call to execute addToCart function passing input and type of item 
               <button
                 onclick="addToCart(document.getElementsByName('menuItemMacaronToShoppingCart'), 'macaron(s)')"
               >
@@ -243,7 +243,7 @@
                 step="1"
                 placeholder="enter quantity"
               />
-              <!-- onClick function call to execute addToCart function passing input and type of item 
+               onClick function call to execute addToCart function passing input and type of item 
               <button
                 onclick="addToCart(document.getElementsByName('menuItemCakesToShoppingCart'), 'cake(s)')"
               >
@@ -278,7 +278,7 @@
                   step="1"
                   placeholder="enter quantity"
                 />
-                <!-- onClick function call to execute addToCart function passing input and type of item
+                onClick function call to execute addToCart function passing input and type of item
                 <button
                   onclick="addToCart(document.getElementsByName('menuItemCupcakesToShoppingCart'), 'cupcake(s)')"
                 >
@@ -313,7 +313,7 @@
                   step="1"
                   placeholder="enter quantity"
                 />
-                <!-- onClick function call to execute addToCart function passing input and type of item 
+                onClick function call to execute addToCart function passing input and type of item 
                 <button
                   onclick="addToCart(document.getElementsByName('menuItemCookieToShoppingCart'), 'cookie(s)')"
                 >
@@ -372,7 +372,7 @@
           <!-- <div class="article-item">
             <div class="blog-media">
               <video
-                src="videos/blog-video-frosting-chocolate-cake--subtitles.mp4"
+                src="videos/blog-video-frosting-chocolate-cake-subtitles.mp4"
                 controls
               ></video>
             </div>
@@ -521,11 +521,18 @@
       <section class="connect" role="region" aria-label="Stay Connected">
         <h3>STAY CONNECTED</h3>
 
+        <!-- GIT417 - Module 4/Chapter 4: Debugging and Error Handling
+            - connect-form is passed to an external function, validateForm(,,,), 
+            - The honeypot is checked for value and execution halted if value !== ""
+            - try..catch.finally error handling is used to check if the input elements have value and meet basic browser validation
+            - debugger is placed before try...catch to automically halt execution at breakpoint if developers console is opened -->
         <form
           role="form"
+          aria-label="Connect Form"
+          class="connect-form"
           action="https://formspree.io/xqkygpgb"
           method="POST"
-          aria-label="Connect Form"
+          onsubmit="validateForm('connect-form', event, 'connectBusiness', 'connect-form-user-message')"
         >
           <div class="form-item-container">
             <div class="form-item">
@@ -555,7 +562,22 @@
               />
             </div>
 
-            <button type="submit" role="button">Connect</button>
+            <div class="form-item">
+              <input
+                type="text"
+                name="connectBusiness"
+                id="connectBusiness"
+                value=""
+              />
+            </div>
+
+            <button type="submit" class="connect-submit-button" role="button">
+              Connect
+            </button>
+
+            <div class="form-item">
+              <label class="connect-form-user-message"></label>
+            </div>
           </div>
 
           <img
