@@ -903,7 +903,7 @@ footer ul {
 }
 
 footer ul li:hover {
-  box-shadow: 0px 1px 0px 0px;
+  opacity: .5;
 }
 
 footer ul li a {
