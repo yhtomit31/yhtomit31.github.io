@@ -67,11 +67,12 @@ function notifyUserAddedToCart(value, item) {
   }
 }
 
-// GIT417 - Module 4/Chapter 4: Debugging and Error Handling
-// connect-form is passed to an external function, validateForm(,,,),
-// The honeypot is checked for value and execution halted if value !== ""
-// try..catch.finally error handling is used to check if the input elements have value and meet basic browser validation
-// debugger is placed before try...catch to automically halt execution at breakpoint if developers console is opened
+/** 
+ * GIT417 - Module 4/Chapter 4: Debugging and Error Handling
+ * The honeypot is checked for value and execution halted if value !== ""
+ * try..catch.finally error handling is used to check if the input elements have value and meet basic browser validation
+ * debugger is placed before try...catch to automically halt execution at breakpoint if developers console is opened
+*/
 function validateForm(element, event, formHoneyPot, submittedFormMessage) {
   // declare variables
   var form = document.getElementsByClassName(element)[0];
