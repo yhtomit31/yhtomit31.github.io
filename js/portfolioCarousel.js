@@ -16,6 +16,12 @@ slider.slick({
   mobileFirst: true,
   pauseOnFocus: false,
   pauseOnHover: false,
+  responsive: [
+    {breakpoint: 768,
+    settings: {
+      centerMode: true
+    }}
+  ],
   slidesToShow: 1,
   slidesToScroll: 1,
   speed: 300,
