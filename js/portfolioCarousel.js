@@ -11,7 +11,7 @@ slider.slick({
   autoplay: true,
   autoplaySpeed: 5000,
   arrows: false,
-  centerMode: true,
+  centerMode: false,
   lazyLoad: "progressive",
   mobileFirst: true,
   pauseOnFocus: false,
