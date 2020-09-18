@@ -296,7 +296,7 @@ nav ul li a {
 }
 
 .page h1 {
-  font-size: clamp(16px, 24vw, 96px);
+  font-size: clamp(16px, 16vw, 96px);
   margin-left: 0.25em;
   text-align: left;
   font-family: "Frosting";
@@ -839,8 +839,8 @@ nav ul li a {
 }
 
 .page.portfolio .portfolio-img {
-  background-size: contain;
-  height: 50em;
+  background-size: cover;
+  height: 32em;
   width: 100%;
   background-repeat: no-repeat;
   display: flex;
@@ -885,7 +885,7 @@ nav ul li a {
 }
 
 .page.portfolio .slick-slider-controls {
-  width: 32em;
+  width: 80%;
   margin-top: 0.24em;
   display: flex;
   justify-content: space-between;
@@ -933,6 +933,14 @@ nav ul li a {
 }
 
 @media all and (min-width: 768px) {
+  .page.portfolio .portfolio-img {
+    height: 50em;
+  }
+
+  .page.portfolio .slick-slider-controls {
+    width: 32em;
+  }
+
   .page.portfolio .slick-slider-controls i {
     font-size: 4em;
   }
