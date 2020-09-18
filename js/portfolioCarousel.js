@@ -11,6 +11,7 @@ slider.slick({
   autoplay: true,
   autoplaySpeed: 5000,
   arrows: false,
+  centerMode: true,
   lazyLoad: "progressive",
   pauseOnFocus: false,
   pauseOnHover: false,
@@ -33,7 +34,7 @@ $(".carousel-control").on("click", (event) => {
   if (imgElement.hasClass("pause")) {
     imgElement.removeClass("pause");
     imgElement.addClass("play");
-    imgElement.css('background-image', 'url(./images/toque.svg)');
+    imgElement.css('background-image', 'url(./images/toque.png)');
     slider.slick("slickPlay");
     isPause = false
   }
