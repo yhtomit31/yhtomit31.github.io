@@ -761,13 +761,14 @@ nav ul li a {
   flex-direction: row;
   justify-content: center;
   background-color: ghostwhite;
-  padding: 2em 0;
-  border-radius: 4px;
+  padding: 1em;
+  max-width: 80%;
+  margin: 0 auto 1em;
 }
 
-.page.blog .article-item .blog-media,
-.page.blog .article-item .blog-message {
-  width: 50%;
+.page.blog article img,
+.page.blog article video {
+  margin-bottom: 1em;
 }
 
 @media all and (min-width: 768px) {
@@ -779,6 +780,11 @@ nav ul li a {
 
   .page.blog .article-item {
     max-width: 80%;
+  }
+
+  .page.blog .article-item .blog-media,
+  .page.blog .article-item .blog-message {
+    width: 50%;
   }
 
   .page.blog .article-item .blog-media {
@@ -905,7 +911,8 @@ nav ul li a {
 .page.portfolio .slick-slider-controls .carousel-control.pause {
   background-size: 24px;
   background-image: url("../images/pause-solid.svg");
-  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(344deg) brightness(100%) contrast(100%);
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(344deg)
+    brightness(100%) contrast(100%);
 }
 
 .page.portfolio .slick-slider-controls i {
