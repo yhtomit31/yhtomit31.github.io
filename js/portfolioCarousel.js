@@ -13,6 +13,7 @@ slider.slick({
   arrows: false,
   centerMode: true,
   lazyLoad: "progressive",
+  mobileFirst: true,
   pauseOnFocus: false,
   pauseOnHover: false,
   slidesToShow: 1,
