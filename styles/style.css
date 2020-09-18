@@ -641,7 +641,7 @@ nav ul li a {
 
 .page form button:hover {
   cursor: pointer;
-  opacity: .5;
+  opacity: 0.5;
 }
 
 .page form .connect-form-user-message {
@@ -649,7 +649,7 @@ nav ul li a {
   color: lightgreen;
   width: 100%;
   text-align: center;
-  transition: .25s all ease;
+  transition: 0.25s all ease;
   height: 16px;
   position: absolute;
   bottom: 1em;
@@ -752,7 +752,7 @@ nav ul li a {
 /* Page - Blog Specific Styles */
 .page.blog h4 {
   width: 96%;
-  border-bottom: 1px solid rgba(00, 00, 00, .5);
+  border-bottom: 1px solid rgba(00, 00, 00, 0.5);
   margin-top: 0;
 }
 
@@ -764,7 +764,6 @@ nav ul li a {
   padding: 2em 0;
   border-radius: 4px;
 }
-
 
 .page.blog .article-item .blog-media,
 .page.blog .article-item .blog-message {
@@ -809,6 +808,7 @@ nav ul li a {
   justify-content: center;
   margin: 0 0;
   position: relative;
+  margin-bottom: 4em;
 }
 
 .page.portfolio:hover {
@@ -830,8 +830,49 @@ nav ul li a {
 }
 
 .page.portfolio img {
+  width: 50em;
+  height: 50em;
+}
+
+.page.portfolio .portfolio-img {
+  background-size: contain;
+  height: 50em;
   width: 100%;
-  max-height: 80em;
+  background-repeat: no-repeat;
+  display: flex;
+  background-position: center;
+}
+
+.page.portfolio .portfolio-img.img-1 {
+  background-image: url("../images/portfolio/7P1B0126.png");
+}
+
+.page.portfolio .portfolio-img.img-2 {
+  background-image: url("../images/portfolio/7P1B0130.png");
+}
+
+.page.portfolio .portfolio-img.img-3 {
+  background-image: url("../images/portfolio/7P1B0131.png");
+}
+
+.page.portfolio .portfolio-img.img-4 {
+  background-image: url("../images/portfolio/7P1B9263.png");
+}
+
+.page.portfolio .portfolio-img.img-5 {
+  background-image: url("../images/portfolio/EMT-Heart---1.png");
+}
+
+.page.portfolio .portfolio-img.img-6 {
+  background-image: url("../images/portfolio/EMT-Heart---Star-Of-Life.png");
+}
+
+.page.portfolio .portfolio-img.img-7 {
+  background-image: url("../images/portfolio/IMG_0211.png");
+}
+
+.page.portfolio .portfolio-img.img-8 {
+  background-image: url("../images/portfolio/IMG_0213.png");
 }
 
 .page.portfolio .slick-slider {
@@ -840,38 +881,36 @@ nav ul li a {
 }
 
 .page.portfolio .slick-slider-controls {
-  width: 100%;
-  height: 100%;
+  width: 32em;
   margin-top: 0.24em;
-  margin-bottom: 4em;
-
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
+  position: absolute;
+  bottom: 1em;
 }
 
 .page.portfolio .slick-slider-controls .carousel-control {
-  width: 32px;
-  height: 32px;
+  width: 48px;
+  height: 48px;
   background-position: center;
-  background-size: 32px;
+  background-size: 48px;
   background-repeat: no-repeat;
   cursor: pointer;
 }
 .page.portfolio .slick-slider-controls .carousel-control.play {
-  background-image: url("../images/toque.svg");
+  background-image: url("../images/toque.png");
 }
 
 .page.portfolio .slick-slider-controls .carousel-control.pause {
   background-size: 24px;
   background-image: url("../images/pause-solid.svg");
-  filter: invert(77%) sepia(2%) saturate(27%) hue-rotate(344deg) brightness(89%)
-    contrast(86%);
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(344deg) brightness(100%) contrast(100%);
 }
 
 .page.portfolio .slick-slider-controls i {
   font-size: 2em;
-  color: darkgray;
+  color: #fff;
 }
 
 .page.portfolio .slick-slider-controls i.fa-chevron-circle-left {
@@ -923,7 +962,7 @@ footer ul {
 }
 
 footer ul li:hover {
-  opacity: .5;
+  opacity: 0.5;
 }
 
 footer ul li a {
