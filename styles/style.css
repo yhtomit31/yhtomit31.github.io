@@ -753,13 +753,15 @@ nav ul li a {
 .page.blog h4 {
   width: 96%;
   border-bottom: 1px solid rgba(00, 00, 00, .5);
+  margin-top: 0;
 }
+
 .page.blog article {
   display: flex;
   flex-direction: row;
   justify-content: center;
   background-color: ghostwhite;
-  padding: 1em 0;
+  padding: 2em 0;
   border-radius: 4px;
 }
 
@@ -767,10 +769,6 @@ nav ul li a {
 .page.blog .article-item .blog-media,
 .page.blog .article-item .blog-message {
   width: 50%;
-}
-
-.page.blog .article-item .blog-media {
-  padding-top: .75em;
 }
 
 @media all and (min-width: 768px) {
