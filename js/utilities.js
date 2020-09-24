@@ -67,12 +67,12 @@ function notifyUserAddedToCart(value, item) {
   }
 }
 
-/** 
+/**
  * GIT417 - Module 4/Chapter 4: Debugging and Error Handling
  * The honeypot is checked for value and execution halted if value !== ""
  * try..catch.finally error handling is used to check if the input elements have value and meet basic browser validation
  * debugger is placed before try...catch to automically halt execution at breakpoint if developers console is opened
-*/
+ */
 function validateForm(element, event, formHoneyPot, submittedFormMessage) {
   // declare variables
   var form = document.getElementsByClassName(element)[0];
@@ -168,4 +168,39 @@ function ajax(method, url, data) {
   // }
   // };
   // xhr.send(data);
+}
+
+/**
+ * GIT417 - Module/Chapter 5: Working with the DOM
+ * variables are initialized and assigned to the appropriate HTML element
+ * assigned variables innerHTML is then set to the appropriate Web API , navigator/screen, properties
+ */
+function webSecurity() {
+  // initialize and assign variables
+  var browser = document.getElementsByClassName("browser")[0],
+    version = document.getElementsByClassName("browser-version")[0],
+    geolocation = document.getElementsByClassName("geolocation")[0],
+    onLine = document.getElementsByClassName("online")[0],
+    platform = document.getElementsByClassName("platform")[0],
+    userAgant = document.getElementsByClassName("user-agent")[0],
+    availHeight = document.getElementsByClassName("available-height")[0],
+    availWidth = document.getElementsByClassName("available-width")[0],
+    colorDepth = document.getElementsByClassName("color-depth")[0],
+    height = document.getElementsByClassName("display-height")[0],
+    width = document.getElementsByClassName("display-width")[0],
+    pixelDepth = document.getElementsByClassName("pixel-depth")[0];
+
+  // set innerHTML to relevant Web API property
+  browser.innerHTML = navigator.appName;
+  version.innerHTML = navigator.appVersion;
+  geolocation.innerHTML = navigator.geolocation;
+  onLine.innerHTML = navigator.onLine ? "Online" : "Offline";
+  platform.innerHTML = navigator.platform;
+  userAgant.innerHTML = navigator.userAgent;
+  availHeight.innerHTML = screen.availHeight;
+  availWidth.innerHTML = screen.availWidth;
+  colorDepth.innerHTML = screen.colorDepth;
+  height.innerHTML = screen.height;
+  width.innerHTML = screen.width;
+  pixelDepth.innerHTML = screen.pixelDepth;
 }
