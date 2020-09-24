@@ -193,7 +193,19 @@ function webSecurity() {
   // set innerHTML to relevant Web API property
   browser.innerHTML = navigator.appName;
   version.innerHTML = navigator.appVersion;
-  geolocation.innerHTML = ('geolocation' in navigator) ? navigator.geolocation : "Blocked by Browser - WHOOP!";
+
+  // Only way I could get the geolocation to work
+  navigator.geolocation.getCurrentPosition(
+    (position) =>
+      (
+        geolocation.innerHTML = `${position.coords.latitude}, ${position.coords.longitude}`
+      ),
+    () => (
+      geolocation.innerHTML = "Block by Browser - WHOOP!"
+    ),
+    { maximumAge: 60000, timeout: 2000 }
+  );
+
   onLine.innerHTML = navigator.onLine ? "Online" : "Offline";
   platform.innerHTML = navigator.platform;
   userAgant.innerHTML = navigator.userAgent;
