@@ -193,7 +193,7 @@ function webSecurity() {
   // set innerHTML to relevant Web API property
   browser.innerHTML = navigator.appName;
   version.innerHTML = navigator.appVersion;
-  geolocation.innerHTML = ('geolocation' in navigator.geolocation) ? navigator.geolocation : "Blocked by Browser - WHOOP!";
+  geolocation.innerHTML = ('geolocation' in navigator) ? navigator.geolocation : "Blocked by Browser - WHOOP!";
   onLine.innerHTML = navigator.onLine ? "Online" : "Offline";
   platform.innerHTML = navigator.platform;
   userAgant.innerHTML = navigator.userAgent;
