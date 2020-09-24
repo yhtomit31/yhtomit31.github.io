@@ -1211,3 +1211,53 @@ footer ul {
   }
 }
 /* End Animations */
+
+/* Start Module 5 Styles -- remove later */
+section.web-security {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2em;
+}
+
+.web-security h2 {
+  font-size: 2em;
+}
+
+.web-security h4 {
+  font-size:  1em;
+}
+
+.web-security p {
+  font-size: 1em;
+}
+
+.web-security ul {
+  border: 1px solid;
+  padding: 1em;
+  width: 784px;
+  font-weight: bold;
+}
+
+.web-security ul span {
+  font-weight: lighter;
+}
+
+.web-security article {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+  margin: .5em 0;
+}
+
+.web-security article a {
+  color: blue;
+}
+
+.web-security article p {
+  padding-left: .25em;
+}
+/* End Module 5 Styles -- remove later */
