@@ -681,7 +681,7 @@ nav ul li a {
 .page .link-to-internal-pages:hover,
 .page .link-to-internal-pages:active,
 .page .link-to-internal-pages:focus {
-  box-shadow: 5px 5px 10px #000;
+  opacity: .5;
 }
 
 .is-active {
