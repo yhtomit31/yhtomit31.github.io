@@ -68,10 +68,9 @@ function notifyUserAddedToCart(value, item) {
 }
 
 /**
- * GIT417 - Module 4/Chapter 4: Debugging and Error Handling
- * The honeypot is checked for value and execution halted if value !== ""
- * try..catch.finally error handling is used to check if the input elements have value and meet basic browser validation
- * debugger is placed before try...catch to automically halt execution at breakpoint if developers console is opened
+ * GIT417 - Module/Chapter 6 Enchancing and Validating Forms
+ * 
+ * on form submission iteration through inputs validating use switch...catch and catch errors with try...catch
  */
 function validateForm(element, event, formHoneyPot, submittedFormMessage) {
   // declare variables
@@ -79,6 +78,7 @@ function validateForm(element, event, formHoneyPot, submittedFormMessage) {
   var inputs = form.elements;
   var formData = new FormData(form);
   var hasErrors;
+  var error;
   var userMessage = document.getElementsByClassName(submittedFormMessage)[0];
 
   // prevent default form submission behavior. Prevents page refresh
@@ -91,34 +91,107 @@ function validateForm(element, event, formHoneyPot, submittedFormMessage) {
     return;
   }
 
-  // add breakpoint before try..catch for exception handling
-  debugger;
   // try catch exception handling for form validation. Displays appropriate message for condition
   try {
     // loop through form inputs to check for value and style as conditioned
     for (var x = 0; x <= inputs.length - 1; x++) {
-      // if input doesn't have value, is not a submit button, and is not the honeypot
-      if (
-        !inputs[x].value &&
-        inputs[x].type !== "submit" &&
-        inputs[x].id !== formHoneyPot
-      ) {
-        inputs[x].classList.add("invalid-form-input");
-        hasErrors = true;
+      if (inputs[x].type === "submit" || inputs[x].id === formHoneyPot) {
+        continue;
       }
-      // if input does have value, is not a submit button, and is not the honeypot
-      else if (
-        inputs[x].value &&
-        inputs[x].type !== "submit" &&
-        inputs[x].id !== formHoneyPot
-      ) {
-        inputs[x].classList.remove("invalid-form-input");
+      if (inputs[x].style.display !== "none") {
+        switch (inputs[x].type) {
+          case "text":
+          case "email": {
+            // if input doesn't have value, is not a submit button, and is not the honeypot
+            var emailField = document.getElementById("preferredEmail");
+            if (
+              inputs[x].type === "email" &&
+              emailField.checked &&
+              !inputs[x].value
+            ) {
+              inputs[x].classList.add("invalid-form-input");
+              error = error === undefined ? "missing email" : "check info :-(";
+              hasErrors = true;
+            } else if (!inputs[x].value) {
+              inputs[x].classList.add("invalid-form-input");
+              error = error === undefined ? "missing values" : "check info :-(";
+              hasErrors = true;
+            }
+            // if input does have value, is not a submit button, and is not the honeypot
+            else if (inputs[x].value) {
+              inputs[x].classList.remove("invalid-form-input");
+            }
+            continue;
+          }
+          case "tel": {
+            var phoneField = document.getElementById("preferredPhone");
+            if (!inputs[x].value && phoneField.checked) {
+              inputs[x].classList.add("invalid-form-input");
+              hasErrors = true;
+              error =
+                error === undefined ? "invalid phone #" : "check info :-(";
+              continue;
+            }
+            if (inputs[x].value.length < 7) {
+              inputs[x].setCustomValidity("Must be 7 digits");
+              inputs[x].reportValidity();
+              inputs[x].classList.add("invalid-form-input");
+            } else {
+              inputs[x].classList.remove("invalid-form-input");
+            }
+            continue;
+          }
+          case "select":
+          case "select-multiple": {
+            if (!inputs[x].value) {
+              inputs[x].style.border = "1px solid lightcoral";
+              hasErrors = true;
+              error =
+                error === undefined ? "select favorite" : "check info :-(";
+            } else {
+              inputs[x].style.border = "1px solid #999999";
+            }
+            continue;
+          }
+          case "radio": {
+            // var connectRadios = document.getElementsByName("preferredContact");
+            if (validateRadio()) {
+              document.getElementsByClassName(
+                "preferred-wrapper"
+              )[0].style.color = "#999999";
+            } else {
+              document.getElementsByClassName(
+                "preferred-wrapper"
+              )[0].style.color = "lightcoral";
+              hasErrors = true;
+              error =
+                error === undefined ? "Select Preferred" : "check info :-(";
+            }
+            continue;
+          }
+          case "checkbox": {
+            var connectCheckboxes = document.getElementsByName("timeToCall");
+            if (validateCheckboxes(connectCheckboxes)) {
+              document.getElementsByClassName(
+                "connect-time-wrapper"
+              )[0].style.color = "#999999";
+            } else {
+              document.getElementsByClassName(
+                "connect-time-wrapper"
+              )[0].style.color = "lightcoral";
+              hasErrors = true;
+              error =
+                error === undefined ? "Chose Best Time" : "check info :-(";
+            }
+            continue;
+          }
+        }
       }
     }
 
     // throw moved outside of loop to allow iteration through each input
     if (hasErrors) {
-      throw `check info :-(`;
+      throw error;
     }
 
     // catch errors and set userMessage innerHTMl to error
@@ -197,12 +270,8 @@ function webSecurity() {
   // Only way I could get the geolocation to work
   navigator.geolocation.getCurrentPosition(
     (position) =>
-      (
-        geolocation.innerHTML = `${position.coords.latitude}, ${position.coords.longitude}`
-      ),
-    () => (
-      geolocation.innerHTML = "Block by Browser - WHOOP!"
-    ),
+      (geolocation.innerHTML = `${position.coords.latitude}, ${position.coords.longitude}`),
+    () => (geolocation.innerHTML = "Block by Browser - WHOOP!"),
     { maximumAge: 60000, timeout: 2000 }
   );
 
@@ -215,4 +284,186 @@ function webSecurity() {
   height.innerHTML = screen.height;
   width.innerHTML = screen.width;
   pixelDepth.innerHTML = screen.pixelDepth;
+}
+
+/**
+ * display appropriate Preferred Contact field when selected
+ *
+ */
+function showPreferredContact(method) {
+  var email = document.getElementsByClassName("connect-email")[0];
+  var invalidEmailField = document.getElementsByClassName("invalid-contact-email")[0];
+  var invalidPhoneField = document.getElementsByClassName("invalid-contact-phone")[0];
+  var phone = document.getElementsByClassName("connect-phone")[0];
+
+  switch (method) {
+    case "phone": {
+      phone.style.display =
+        !phone.style.display || phone.style.display === "none"
+          ? "flex"
+          : "none";
+      email.style.display = "none";
+      invalidEmailField.style.display = "none";
+      break;
+    }
+    case "email": {
+      email.style.display =
+        !email.style.display || email.style.display === "none"
+          ? "flex"
+          : "none";
+      phone.style.display = "none";
+      invalidPhoneField.style.display = "none"
+      break;
+    }
+    default: {
+      email.style.display = "inline-block";
+      invalidEmailField.style.display = "inline-block";
+      phone.style.display = "inline-block";
+      invalidPhoneField.style.display = "inline-block";
+      break;
+    }
+  }
+}
+
+// global variables for validation
+var invalidBorder = "1px solid lightcoral";
+var validBorder = "1px solid #999999";
+var invalidTextColor = "lightcoral";
+var validTextColor = "#999999";
+
+/**
+ * validate form text input
+ * verify input has value
+ * display validation message when necessary
+ */
+function validateTextField(event, invalidLabel) {
+  var input = event.target;
+  var value = event.target.value;
+  var invalid = document.getElementsByClassName(invalidLabel)[0];
+  if (!value) {
+    input.style.border = invalidBorder;
+    invalid.innerHTML = "enter value";
+    invalid.style.color = invalidTextColor;
+  } else {
+    input.style.border = validBorder;
+    invalid.innerHTML = "";
+    invalid.style.color = validTextColor;
+  }
+}
+
+/**
+ * validat form email input
+ * verify email address includes basic requirements(@, .) and/or has value
+ * display validation message when appropriate
+ * 
+ */
+function validateEmail(event, invalidLabel) {
+  var emailAddress = event.target.value;
+  var input = event.target;
+  var invalid = document.getElementsByClassName(invalidLabel)[0];
+
+  const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+  if (!re.test(String(emailAddress).toLowerCase()) && emailAddress) {
+    input.style.border = invalidBorder;
+    invalid.innerHTML = "invalid email";
+    invalid.style.color = invalidTextColor;
+    return;
+  } else if (!emailAddress) {
+    input.style.border = invalidBorder;
+    invalid.innerHTML = "enter value";
+    invalid.style.color = invalidTextColor;
+  } else {
+    input.style.border = validBorder;
+    invalid.innerHTML = "";
+    invalid.style.color = validTextColor;
+  }
+}
+
+/**
+ * validate form phone input
+ * verify input value is only numeric and at least 7 characters long
+ * display validation message where necessary
+ */
+function validatePhone(event, invalidLabel) {
+  var isNum = /^\d+$/.test(event.target.value);
+  var phoneNumber = event.target.value;
+  var input = event.target;
+  var invalid = document.getElementsByClassName(invalidLabel)[0];
+  if (!isNum) {
+    input.style.border = invalidBorder;
+    invalid.innerHTML = "enter value";
+    invalid.style.color = invalidTextColor;
+  } else if (phoneNumber.length < 7 && isNum) {
+    input.style.border = invalidBorder;
+    invalid.innerHTML = "invalid number";
+    invalid.style.color = invalidTextColor;
+  } else {
+    input.style.border = validBorder;
+    invalid.innerHTML = "";
+    invalid.style.color = validTextColor;
+  }
+}
+
+
+/**
+ * validate form radio inputs
+ * form radio inputs are retrieved and checked for user interaction
+ */
+function validateRadio() {
+  var radios = document.querySelectorAll("input[type=radio]");
+  var counter = 0;
+
+  // loop through radio inputs and increment counter if checked
+  for (var x = 0; x <= radios.length - 1; x++) {
+    debugger;
+    if (radios[x].checked) {
+      counter++
+    }
+  }
+  var invalidRadioLabel = document.getElementsByClassName(
+    "invalid-preferred-contact"
+  )[0];
+
+  // if counter is equal to 0(zero) display validation message
+  if (counter === 0) {
+    debugger    
+    invalidRadioLabel.innerHTML = "select option";
+    invalidRadioLabel.style.color = invalidTextColor;
+    return false;
+  } else {
+    invalidRadioLabel.innerHTML = "";
+    invalidRadioLabel.style.color = validTextColor;
+    return true;
+  }
+}
+
+/**
+ * validate form checkboxes
+ * all form checkboxes are retrieved and looped to verify at least one is checked
+ */
+function validateCheckboxes(checkboxes) {
+  var checkboxes = document.querySelectorAll("input[type=checkbox]");
+  var counter = 0;
+
+  // increment counter if checkbox isn's checked
+  for (var x = 0; x <= checkboxes.length - 1; x++) {
+    if (!checkboxes[x].checked) {
+      counter++;
+    }
+  }
+
+  var invalidCheckboxesLabel = document.getElementsByClassName(
+    "invalid-contact-best-time"
+  )[0];
+  // if both checkboxes are unchecked display validation message
+  if (counter === 2) {
+    invalidCheckboxesLabel.innerHTML = "select option";
+    invalidCheckboxesLabel.style.color = invalidTextColor;
+    return false;
+  } else {
+    invalidCheckboxesLabel.innerHTML = "";
+    invalidCheckboxesLabel.style.color = validTextColor;
+    return true;
+  }
 }

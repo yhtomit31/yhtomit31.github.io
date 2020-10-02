@@ -35,7 +35,6 @@
     />
 
     <script src="js/libraries/modernizr.custom.05819.js"></script>
-    <script src="js/utilities.js"></script>
 
     <script
       src="https://kit.fontawesome.com/75d466a4cd.js"
@@ -131,7 +130,9 @@
             <a href="blog.html" title="Link to Blog page">blog</a>
           </li>
           <li>
-            <a href="portfolio.html" title="Link to Portfolio page">portfolio</a>
+            <a href="portfolio.html" title="Link to Portfolio page"
+              >portfolio</a
+            >
           </li>
           <li>
             <a href="#" onclick="alert('Shopping Cart coming soon')">
@@ -532,6 +533,7 @@
           action="https://formspree.io/xqkygpgb"
           method="POST"
           onsubmit="validateForm('connect-form', event, 'connectBusiness', 'connect-form-user-message')"
+          novalidate
         >
           <div class="form-item-container">
             <div class="form-item">
@@ -540,26 +542,81 @@
                 type="text"
                 name="connectContactName"
                 id="connectContactName"
+                onblur="validateTextField(event, 'invalid-contact-name')"
               />
             </div>
 
+            <label class="form-item invalid-form-label invalid-contact-name"></label>
+
             <div class="form-item">
+              <label for="preferredContact">Preferred Contact</label>
+              <div class="preferred-wrapper">
+                <input
+                  type="radio"
+                  name="preferredContact"
+                  id="preferredEmail"
+                  onclick="showPreferredContact('email')"
+                />email
+                <input
+                  type="radio"
+                  name="preferredContact"
+                  id="preferredPhone"
+                  onclick="showPreferredContact('phone')"
+                />phone
+              </div>
+            </div>
+
+            <label class="form-item invalid-form-label invalid-preferred-contact"></label>
+
+            <div class="form-item connect-phone">
               <label for="connectContactTelephone">Phone</label>
               <input
                 type="tel"
                 name="connectContactTelephone"
                 id="connectContactTelephone"
+                minlength="7"
+                onblur="validatePhone(event, 'invalid-contact-phone')"
               />
             </div>
+            
+            <label class="form-item invalid-form-label invalid-contact-phone"></label>
 
-            <div class="form-item">
+            <div class="form-item connect-email">
               <label for="connectContactEmail">Email</label>
               <input
                 type="email"
                 name="connectContactEmail"
                 id="connectContactEmail"
+                onblur="validateEmail(event, 'invalid-contact-email')"
               />
             </div>
+
+            <label class="form-item invalid-form-label invalid-contact-email"></label>
+
+            <div class="form-item connect-when">
+              <label for="connectTime">Best Time</label>
+              <div class="connect-time-wrapper">
+                <input type="checkbox" name="timeToCall" id="am" />am
+                <input type="checkbox" name="timeToCall" id="pm" />pm    
+              </div>
+            </div>
+
+            <label class="form-item invalid-form-label invalid-contact-best-time"></label>
+
+            <div class="form-item connect-fav-item">
+              <label for="favoriteItem">Favorite(s)</label>
+              <select name="favoriteItem" id="favoriteItems" value="" multiple>
+                <option value="" disabled>
+                  "ctrl"/"cmd" + click for multiple
+                </option>
+                <option value="cakes">cakes</option>
+                <option value="cookies" selected>cookies</option>
+                <option value="macarons">macarons</option>
+                <option value="cupcakes">cupcakes</option>
+              </select>
+            </div>
+
+            <label class="form-item invalid-form-label invalid-contact-favorites"></label>
 
             <div class="form-item">
               <input
@@ -604,7 +661,9 @@
           <a href="portfolio.html" title="Link to Portfolio page">portfolio</a>
         </li>
         <li>
-          <a href="webSecurity.html" title="Link to Web Security">web security</a>
+          <a href="webSecurity.html" title="Link to Web Security"
+            >web security</a
+          >
         </li>
       </ul>
 
@@ -657,4 +716,6 @@
       </div>
     </footer>
   </body>
+  <script src="js/utilities.js"></script>
+
 </html>
