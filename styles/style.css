@@ -565,6 +565,24 @@ nav ul li a {
   align-items: center;
 }
 
+.page .connect .connect-fav-item select {
+  width: 70%;
+  border: 1px solid #999;
+  border-radius: 4px;
+  padding: 1px;
+}
+
+.page .connect .preferred-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+}
+
+.page .connect .connect-time-wrapper {
+  display: flex;
+  width: 70%;
+}
+
 .page form {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -598,7 +616,7 @@ nav ul li a {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  margin: 0.25em;
+  margin: 0.5em;
 }
 
 .page .form-item label {
@@ -655,6 +673,12 @@ nav ul li a {
   right: 0;
 }
 
+.page form .invalid-form-label {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
 .page img,
 .page video {
   width: 100%;
@@ -681,7 +705,7 @@ nav ul li a {
 .page .link-to-internal-pages:hover,
 .page .link-to-internal-pages:active,
 .page .link-to-internal-pages:focus {
-  opacity: .5;
+  opacity: 0.5;
 }
 
 .is-active {
@@ -1225,7 +1249,7 @@ section.web-security {
 }
 
 .web-security h4 {
-  font-size:  1em;
+  font-size: 1em;
 }
 
 .web-security p {
@@ -1250,7 +1274,7 @@ section.web-security {
   justify-content: center;
   width: 100%;
   align-items: center;
-  margin: .5em 0;
+  margin: 0.5em 0;
 }
 
 .web-security article a {
@@ -1258,6 +1282,6 @@ section.web-security {
 }
 
 .web-security article p {
-  padding-left: .25em;
+  padding-left: 0.25em;
 }
 /* End Module 5 Styles -- remove later */
