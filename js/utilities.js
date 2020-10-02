@@ -416,7 +416,6 @@ function validateRadio() {
 
   // loop through radio inputs and increment counter if checked
   for (var x = 0; x <= radios.length - 1; x++) {
-    debugger;
     if (radios[x].checked) {
       counter++
     }
@@ -427,7 +426,6 @@ function validateRadio() {
 
   // if counter is equal to 0(zero) display validation message
   if (counter === 0) {
-    debugger    
     invalidRadioLabel.innerHTML = "select option";
     invalidRadioLabel.style.color = invalidTextColor;
     return false;
