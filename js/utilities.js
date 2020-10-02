@@ -69,7 +69,7 @@ function notifyUserAddedToCart(value, item) {
 
 /**
  * GIT417 - Module/Chapter 6 Enchancing and Validating Forms
- * 
+ *
  * on form submission iteration through inputs validating use switch...catch and catch errors with try...catch
  */
 function validateForm(element, event, formHoneyPot, submittedFormMessage) {
@@ -143,13 +143,19 @@ function validateForm(element, event, formHoneyPot, submittedFormMessage) {
           }
           case "select":
           case "select-multiple": {
+            var invalidContactFavoritesLabel = document.getElementsByClassName(
+              "invalid-contact-favorites"
+            )[0];
             if (!inputs[x].value) {
               inputs[x].style.border = "1px solid lightcoral";
               hasErrors = true;
-              error =
-                error === undefined ? "select favorite" : "check info :-(";
+              error = "check info :-(";
+              invalidContactFavoritesLabel.innerHTML = "select favorite";
+              invalidContactFavoritesLabel.style.color = invalidTextColor;
             } else {
               inputs[x].style.border = "1px solid #999999";
+              invalidContactFavoritesLabel.innerHTML = "";
+              invalidContactFavoritesLabel.style.color = validTextColor;
             }
             continue;
           }
@@ -292,8 +298,12 @@ function webSecurity() {
  */
 function showPreferredContact(method) {
   var email = document.getElementsByClassName("connect-email")[0];
-  var invalidEmailField = document.getElementsByClassName("invalid-contact-email")[0];
-  var invalidPhoneField = document.getElementsByClassName("invalid-contact-phone")[0];
+  var invalidEmailField = document.getElementsByClassName(
+    "invalid-contact-email"
+  )[0];
+  var invalidPhoneField = document.getElementsByClassName(
+    "invalid-contact-phone"
+  )[0];
   var phone = document.getElementsByClassName("connect-phone")[0];
 
   switch (method) {
@@ -312,7 +322,7 @@ function showPreferredContact(method) {
           ? "flex"
           : "none";
       phone.style.display = "none";
-      invalidPhoneField.style.display = "none"
+      invalidPhoneField.style.display = "none";
       break;
     }
     default: {
@@ -355,7 +365,7 @@ function validateTextField(event, invalidLabel) {
  * validat form email input
  * verify email address includes basic requirements(@, .) and/or has value
  * display validation message when appropriate
- * 
+ *
  */
 function validateEmail(event, invalidLabel) {
   var emailAddress = event.target.value;
@@ -405,7 +415,6 @@ function validatePhone(event, invalidLabel) {
   }
 }
 
-
 /**
  * validate form radio inputs
  * form radio inputs are retrieved and checked for user interaction
@@ -417,7 +426,7 @@ function validateRadio() {
   // loop through radio inputs and increment counter if checked
   for (var x = 0; x <= radios.length - 1; x++) {
     if (radios[x].checked) {
-      counter++
+      counter++;
     }
   }
   var invalidRadioLabel = document.getElementsByClassName(
